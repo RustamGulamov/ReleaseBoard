@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <LangVersion>9.0</LangVersion>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <CodeAnalysisRuleSet></CodeAnalysisRuleSet>
+        <AssemblyName>ReleaseBoard.Application.CommandHandlers</AssemblyName>
+        <RootNamespace>ReleaseBoard.Application.CommandHandlers</RootNamespace>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <OutputPath>..\..\Out\Debug\ReleaseBoard.Application.CommandHandlers\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <WarningsAsErrors />
+        <DocumentationFile>..\..\Out\XmlDoc\ReleaseBoard.Application.CommandHandlers.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+        <OutputPath>..\..\Out\Release\ReleaseBoard.Application.CommandHandlers\</OutputPath>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <WarningsAsErrors />
+        <DocumentationFile>..\..\Out\XmlDoc\ReleaseBoard.Application.CommandHandlers.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <AdditionalFiles Include="..\..\_stylecop\stylecop.json" Link="stylecop.json" />
+    </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Hangfire.Core" Version="1.7.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ReleaseBoard.Application\ReleaseBoard.Application.csproj" />
+  </ItemGroup>
+
+</Project>

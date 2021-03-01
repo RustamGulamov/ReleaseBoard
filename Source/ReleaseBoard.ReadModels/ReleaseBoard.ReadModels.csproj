@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+      <TargetFramework>net5.0</TargetFramework>
+      <LangVersion>9.0</LangVersion>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <CodeAnalysisRuleSet></CodeAnalysisRuleSet>
+        <AssemblyName>ReleaseBoard.ReadModels</AssemblyName>
+        <RootNamespace>ReleaseBoard.ReadModels</RootNamespace>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <OutputPath>..\..\Out\Debug\ReleaseBoard.ReadModels\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <WarningsAsErrors />
+        <DocumentationFile>..\..\Out\XmlDoc\ReleaseBoard.ReadModels.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+        <OutputPath>..\..\Out\Release\ReleaseBoard.ReadModels\</OutputPath>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <WarningsAsErrors />
+        <DocumentationFile>..\..\Out\XmlDoc\ReleaseBoard.ReadModels.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <AdditionalFiles Include="..\..\_stylecop\stylecop.json" Link="stylecop.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AutoMapper" Version="10.0.0" />
+        <PackageReference Include="CompareNETObjects" Version="4.66.0" />
+        <PackageReference Include="DeepCloner" Version="0.10.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ReleaseBoard.Domain\ReleaseBoard.Domain.csproj" />
+    </ItemGroup>
+
+
+</Project>

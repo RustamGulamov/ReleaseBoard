@@ -1,0 +1,22 @@
+version: "2"
+services:
+    build_sync:
+        image: docker-registry:5000/build/ova/microservices/release_board_build_sync:dev
+        volumes:
+         - /home/release_board/logs/build_sync:/logs
+         - /home/release_board/config/build_sync:/config
+    release_board_app:
+        image: docker-registry:5000/build/ova/microservices/release_board_app:dev 
+        ports:
+         - "5100:80"
+        volumes:
+         - /home/release_board/logs/release_board_app:/logs
+         - /home/release_board/config/release_board_app:/config
+    rabbit:
+        image: docker-registry:5000/build/ova/rabbitmq:3.7.8-management
+        ports:
+         - "5672:5672"
+         - "15672:15672"
+        volumes:
+         - /home/release_board/logs/rabbit:/logs
+         - /home/release_board/config/rabbit:/config

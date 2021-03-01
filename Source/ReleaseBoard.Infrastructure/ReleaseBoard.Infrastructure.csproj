@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <LangVersion>9.0</LangVersion>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <CodeAnalysisRuleSet></CodeAnalysisRuleSet>
+        <AssemblyName>ReleaseBoard.Infrastructure</AssemblyName>
+        <RootNamespace>ReleaseBoard.Infrastructure</RootNamespace>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <OutputPath>..\..\Out\Debug\ReleaseBoard.Infrastructure\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <WarningsAsErrors />
+        <DocumentationFile>..\..\Out\XmlDoc\ReleaseBoard.Infrastructure.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+        <OutputPath>..\..\Out\Release\ReleaseBoard.Infrastructure\</OutputPath>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <WarningsAsErrors />
+        <DocumentationFile>..\..\Out\XmlDoc\ReleaseBoard.Infrastructure.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <AdditionalFiles Include="..\..\_stylecop\stylecop.json" Link="stylecop.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Hangfire.Core" Version="1.7.12" />
+        <PackageReference Include="Hangfire.Mongo" Version="0.6.7" />
+        <PackageReference Include="Hangfire.AspNetCore" Version="1.7.12" />
+        <PackageReference Include="Lighthouse.Contracts" Version="1.1.0.141-release" />
+        <PackageReference Include="ReleaseBoard.Common.Infrastructure" Version="1.0.0.85-release" />
+        <PackageReference Include="StaticStorageService.Client" Version="1.0.0.125-release" />
+        <PackageReference Include="StaticStorageService.Shared" Version="1.0.0.125-release" />
+        <PackageReference Include="MongoDB.Driver" Version="2.10.4" />
+        <PackageReference Include="prometheus-net" Version="4.1.1" />
+        <PackageReference Include="prometheus-net.AspNetCore" Version="4.1.1" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\ReleaseBoard.Application\ReleaseBoard.Application.csproj" />
+    </ItemGroup>
+
+</Project>
